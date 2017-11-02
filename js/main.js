@@ -1292,8 +1292,8 @@ $(function() {
 });
 
 $(window).load(function(){
-  setTimeout(function(){
+  //setTimeout(function(){
     var lastToken = $('#lastToken')
     if(!lastToken.hasClass('hide')) lastToken.trigger('click')
-  }, 2000)
+  //}, 2000)
 })
