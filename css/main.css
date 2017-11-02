@@ -156,7 +156,10 @@ body {
   border-color:  #000;
 }
 .navbar-mine .navbar-brand {
-  color: #dddddd;
+  font-size: 24px !important;
+  text-shadow: none !important;
+  color: #fff !important;
+  font-weight: bold !important;
 }
 .navbar-mine .navbar-brand:hover,
 .navbar-mine .navbar-brand:focus {
