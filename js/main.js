@@ -382,7 +382,7 @@ function handleToken(token, isRefresh) {
       debug('filters cleared');
       stopSpin();
        
-      setTimeout(function(){ filterListDates(true) }, 2000)
+      setTimeout(function(){ filterListDates(true) }, 500)
     }
     else {
       $('#alert1').removeClass('hide');
@@ -595,8 +595,8 @@ function filterListDates(force){
   var t = moment($('.toDate').datepicker('getDate')).add(1, 'd');
  
   if(force) {
-    f = moment().startOf('month')
-    t = moment()
+    f = moment().startOf('month').subtract(1, 'd');
+    t = moment().add(1, 'd');
   }
   
   userList.filter(function(item) {
