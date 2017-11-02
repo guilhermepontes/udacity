@@ -422,6 +422,7 @@ function handleData(dataStr) {
   //our inital savedDates to the current max date range
   if (myGlobal.savedDates.from === null) {
     myGlobal.savedDates.from = myGlobal.staticStats.startDate;
+    console.log(myGlobal.staticStats.startDate)
   }
   if (myGlobal.savedDates.to === null) {
     myGlobal.savedDates.to = myGlobal.staticStats.recentDate;
