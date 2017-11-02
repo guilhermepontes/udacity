@@ -381,8 +381,8 @@ function handleToken(token, isRefresh) {
       handleData(resJSON);
       debug('filters cleared');
       stopSpin();
-      
-      filterListDates(true);
+       
+      setTimeout(function(){ filterListDates(true) }, 2000)
     }
     else {
       $('#alert1').removeClass('hide');
