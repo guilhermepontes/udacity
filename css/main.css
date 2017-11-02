@@ -1,11 +1,11 @@
-
+@import url('https://fonts.googleapis.com/css?family=Cabin');
 
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
 
 * {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Cabin', sans-serif;
 }
 
 html {
