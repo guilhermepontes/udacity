@@ -146,7 +146,7 @@ var parseVals = function(vals) {
       for (i = 0; i < +review.rating; i++) {
         stars[i] = '';
       }
-      var starTemp = '<i class="fa fa-lgonlg fa-star{{typfe}}"></i>';
+      var starTemp = '<i class="fa fa-lgonlg fa-star{{type}}"></i>';
       review.stars = stars.map(function(star) {
         return starTemp.replace('{{type}}',star);
       }).join('') + starResult;
@@ -1167,7 +1167,7 @@ $('.my-fuzzy-search').on('propertychange input', function() {
  */
 $('#jsonInput').keypress(function(event) {
     // Check the keyCode and if the user pressed Enter (code = 13)
-    if (event.keyCode == 13 && !myGlobal(ingNow) {
+    if (event.keyCode == 13 && !myGlobal(loadingNow) {
       if(isJson(this.value)) {
         //store this data in case we want to reload it
         saveData(this.value);
@@ -1292,7 +1292,7 @@ $(function() {
 });
 
 $(window).load(function(){
-  setTimeout(function() {
+  setTimeout(function(){
     var lastToken = $('#lastToken')
     if(!lastToken.hasClass('hide')) lastToken.trigger('click')
   }, 2000)
