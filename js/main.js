@@ -1167,7 +1167,7 @@ $('.my-fuzzy-search').on('propertychange input', function() {
  */
 $('#jsonInput').keypress(function(event) {
     // Check the keyCode and if the user pressed Enter (code = 13)
-    if (event.keyCode == 13 && !myGlobal(loadingNow) {
+    if (event.keyCode == 13 && !myGlobal(loadingNow)) {
       if(isJson(this.value)) {
         //store this data in case we want to reload it
         saveData(this.value);
