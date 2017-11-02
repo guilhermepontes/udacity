@@ -1266,6 +1266,7 @@ $(function() {
   var oldToken = curToken();
   if (oldToken !== '{}') {
     $('#lastToken').removeClass('hide');
+    $('#lastToken').trigger('click');
     // handleToken(oldToken);
   }
 
