@@ -1266,7 +1266,7 @@ $(function() {
   var oldToken = curToken();
   if (oldToken !== '{}') {
     $('#lastToken').removeClass('hide');
-    handleToken(oldToken);
+//     handleToken(oldToken);
   }
 
   //clean up the old data item for users now that we use indexDB via
