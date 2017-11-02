@@ -146,7 +146,7 @@ var parseVals = function(vals) {
       for (i = 0; i < +review.rating; i++) {
         stars[i] = '';
       }
-      var starTemp = '<i class="fa fa-lgonlg fa-star{{type}}"></i>';
+      var starTemp = '<i class="fa fa-lgonlg fa-star{{typfe}}"></i>';
       review.stars = stars.map(function(star) {
         return starTemp.replace('{{type}}',star);
       }).join('') + starResult;
@@ -421,7 +421,7 @@ function handleData(dataStr) {
   //make sure we don't try to restore empty dates by setting
   //our inital savedDates to the current max date range
   if (myGlobal.savedDates.from === null) {
-    myGlobal.savedDates.from = myGlobal.staticStats.startDate;
+    myGlobal.savedDates.from = moment().format('MM/DD/YYYY'); //myGlobal.staticStats.startDate;
     console.log(myGlobal.staticStats.startDate)
   }
   if (myGlobal.savedDates.to === null) {
