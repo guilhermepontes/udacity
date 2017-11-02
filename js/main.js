@@ -381,6 +381,8 @@ function handleToken(token, isRefresh) {
       handleData(resJSON);
       debug('filters cleared');
       stopSpin();
+      
+      filterListDates(true);
     }
     else {
       $('#alert1').removeClass('hide');
@@ -587,11 +589,16 @@ function updateDatePicker() {
 /**
  * Filters the review history list based on dates in the datepicker
  */
-function filterListDates(){
-  debug("date filter triggered");
+function filterListDates(force){
   myGlobal.datePickerActive = true;
   var f = moment($('.fromDate').datepicker('getDate')).subtract(1, 'day');
   var t = moment($('.toDate').datepicker('getDate')).add(1, 'd');
+ 
+  if(force) {
+    f = moment().startOf('month')
+    t = moment()
+  }
+  
   userList.filter(function(item) {
     return moment(item.values().completed_at).isBetween(f, t, 'day');
   });
