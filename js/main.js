@@ -1302,12 +1302,14 @@ $(window).load(function(){
   setTimeout(function(){
     var lastToken = $('#lastToken')
     if(!lastToken.hasClass('hide')) lastToken.trigger('click')
+    setTimeout(function() { window.monthLoaded = true }, 1000)
   }, 1000)
   
   var euroInterval = setInterval(function(){
-    if(myGlobal.stats.earned !== 0) {
+    if(myGlobal.stats.earned !== 0 && window.monthLoaded) {
       $.ajax('http://api.fixer.io/latest?symbols=USD,EURO&base=usd').then(function(data) {
         console.log(data)
+        console.log(myGlobal.stats.earned)
         clearInterval(euroInterval)
       })
     }
