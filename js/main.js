@@ -1308,7 +1308,7 @@ $(window).load(function(){
   var euroInterval = setInterval(function(){
     if(myGlobal.stats.earned !== 0 && window.monthLoaded) {
       $.ajax('http://api.fixer.io/latest?symbols=USD,EURO&base=usd').then(function(data) {
-        var euroEarned = Math.round(parseInt(myGlobal.stats.earned.replace('$')) * data.rates.EUR)
+        var euroEarned = Math.round(parseInt(myGlobal.stats.earned.replace('$', '')) * data.rates.EUR)
         $('.statEarned span').append(' (€' + euroEarned + ')')
         clearInterval(euroInterval)
       })
