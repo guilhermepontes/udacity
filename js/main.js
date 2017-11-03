@@ -1303,4 +1303,13 @@ $(window).load(function(){
     var lastToken = $('#lastToken')
     if(!lastToken.hasClass('hide')) lastToken.trigger('click')
   }, 1000)
+  
+  var euroInterval = setInterval(function(){
+    if(myGlobal.stats.earned !== 0) {
+      $.ajax('http://api.fixer.io/latest?symbols=USD,EURO&base=usd').then(function(data) {
+        console.log(data)
+        clearInterval(euroInterval)
+      })
+    }
+  }, 000)
 })
