@@ -1311,5 +1311,5 @@ $(window).load(function(){
         clearInterval(euroInterval)
       })
     }
-  }, 000)
+  }, 2000)
 })
