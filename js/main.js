@@ -786,9 +786,10 @@ function getPageSize() {
  * @param  {number} num [number to convert to money string]
  * @return {string}   [string in format of $1,000.00]
  */
-function numToMoney(num) {
-    num = Math.round(num*100)/100;
-    return '$' + numWithComs(num);
+function numToMoney(num, sign) {
+  if(!sign) sign = '$'  
+  num = Math.round(num*100)/100;
+  return sign + numWithComs(num);
 }
 
 /**
@@ -1308,8 +1309,8 @@ $(window).load(function(){
   var euroInterval = setInterval(function(){
     if(myGlobal.stats.earned !== 0 && window.monthLoaded) {
       $.ajax('http://api.fixer.io/latest?symbols=USD,EURO&base=usd').then(function(data) {
-        var euroEarned = Math.round(parseInt(myGlobal.stats.earned.replace('$', '')) * data.rates.EUR)
-        $('.statEarned span').append(' (€' + euroEarned + ')')
+        var euroEarned = numToMoney(parseInt(myGlobal.stats.earned.replace('$', '')) * data.rates.EUR, '€')
+        $('.statEarned span').append(' (' + euroEarned + ')')
         clearInterval(euroInterval)
       })
     }
